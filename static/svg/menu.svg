@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu</title>
+    <defs>
+        <path d="M17.25,0 C17.6642136,0 18,0.335786438 18,0.75 C18,1.11818983 17.7346873,1.42441256 17.3848134,1.4879165 L17.25,1.5 L0.75,1.5 C0.335786438,1.5 0,1.16421356 0,0.75 C0,0.381810167 0.265312741,0.0755874445 0.615186551,0.0120835041 L0.75,0 L17.25,0 Z M17.25,7.5 C17.6642136,7.5 18,7.83578644 18,8.25 C18,8.61818983 17.7346873,8.92441256 17.3848134,8.9879165 L17.25,9 L0.75,9 C0.335786438,9 0,8.66421356 0,8.25 C0,7.88181017 0.265312741,7.57558744 0.615186551,7.5120835 L0.75,7.5 L17.25,7.5 Z M17.25,15 C17.6642136,15 18,15.3357864 18,15.75 C18,16.1181898 17.7346873,16.4244126 17.3848134,16.4879165 L17.25,16.5 L0.75,16.5 C0.335786438,16.5 0,16.1642136 0,15.75 C0,15.3818102 0.265312741,15.0755874 0.615186551,15.0120835 L0.75,15 L17.25,15 Z" id="path-1"></path>
+    </defs>
+    <g id="onnx-modifier" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nav/button/normal" transform="translate(-15.000000, -15.000000)">
+            <g id="menu" transform="translate(15.000000, 15.750000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="形状结合" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="0-color/Dark/3Secondary" mask="url(#mask-2)" fill="#8D98AA">
+                    <g transform="translate(-3.000000, -3.750000)" id="矩形">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

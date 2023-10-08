@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1-icon/01公共/03箭头/chevron-down</title>
+    <defs>
+        <path d="M10.4964466,8.50355339 L6.2,12.8 C6.00670034,12.9932997 5.69329966,12.9932997 5.5,12.8 C5.30670034,12.6067003 5.30670034,12.2932997 5.5,12.1 L9.30857864,8.29142136 C9.3866835,8.2133165 9.3866835,8.0866835 9.30857864,8.00857864 L5.5,4.2 C5.30670034,4.00670034 5.30670034,3.69329966 5.5,3.5 C5.69329966,3.30670034 6.00670034,3.30670034 6.2,3.5 L10.4964466,7.79644661 C10.6917088,7.99170876 10.6917088,8.30829124 10.4964466,8.50355339 Z" id="path-1"></path>
+    </defs>
+    <g id="1-icon/01公共/03箭头/chevron-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1" transform="translate(8.000000, 8.150000) scale(-1, 1) rotate(90.000000) translate(-8.000000, -8.150000) "></use>
+        </mask>
+        <use id="蒙版" fill="#000000" transform="translate(8.000000, 8.150000) scale(-1, 1) rotate(90.000000) translate(-8.000000, -8.150000) " xlink:href="#path-1"></use>
+        <g id="0-color/Dark/3Secondary" mask="url(#mask-2)" fill="#8D98AA">
+            <rect id="矩形" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

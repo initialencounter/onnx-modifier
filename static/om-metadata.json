@@ -1,0 +1,5439 @@
+[
+  {
+    "name": "Data",
+    "schema": {
+      "category": "Data",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "data_type",
+          "type": "DataTypeInner"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Concat",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "N"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ConcatD",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "N"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Rank",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Dequantize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "min",
+          "dynamic": false
+        },
+        {
+          "name": "max",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale"
+        },
+        {
+          "name": "offset"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Quantize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "min",
+          "dynamic": false
+        },
+        {
+          "name": "max",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale"
+        },
+        {
+          "name": "offset"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Reshape",
+    "schema": {
+      "category": "Shape",
+      "inputs": [
+        {
+          "name": "tensor",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "input_format",
+          "type": "Format"
+        },
+        {
+          "name": "output_format",
+          "type": "Format"
+        },
+        {
+          "name": "shape"
+        },
+        {
+          "name": "axis"
+        },
+        {
+          "name": "num_axes"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Split",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "output_num"
+        },
+        {
+          "name": "slice_point"
+        },
+        {
+          "name": "size_split"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SplitV",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "size_splits",
+          "dynamic": false
+        },
+        {
+          "name": "split_dim",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_split"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Unpack",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "num"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Flatten",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Slice",
+    "schema": {
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": false
+        },
+        {
+          "name": "offsets",
+          "dynamic": false
+        },
+        {
+          "name": "size",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ExpandDims",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Gather",
+    "schema": {
+      "inputs": [
+        {
+          "name": "params",
+          "dynamic": false
+        },
+        {
+          "name": "indices",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        }
+      ]
+    }
+  },
+  {
+    "name": "GatherNd",
+    "schema": {
+      "inputs": [
+        {
+          "name": "params",
+          "dynamic": false
+        },
+        {
+          "name": "indices",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Pack",
+    "schema": {
+      "inputs": [
+        {
+          "name": "values",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "N"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SpaceToDepth",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "block_size"
+        }
+      ]
+    }
+  },
+  {
+    "name": "StridedSlice",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "begin",
+          "dynamic": false
+        },
+        {
+          "name": "end",
+          "dynamic": false
+        },
+        {
+          "name": "strides",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "begin_mask"
+        },
+        {
+          "name": "end_mask"
+        },
+        {
+          "name": "ellipsis_mask"
+        },
+        {
+          "name": "new_axis_mask"
+        },
+        {
+          "name": "shrink_axis_mask"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SpaceToBatchND",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "block_shape",
+          "dynamic": false
+        },
+        {
+          "name": "paddings",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "BatchToSpaceND",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "block_shape",
+          "dynamic": false
+        },
+        {
+          "name": "crops",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Tile",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Size",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Fill",
+    "schema": {
+      "inputs": [
+        {
+          "name": "dims",
+          "dynamic": false
+        },
+        {
+          "name": "value",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "InvertPermutation",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Pad",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "padding",
+          "dynamic": false
+        },
+        {
+          "name": "constant_values",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ReverseSequence",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "seq_lengths",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "seq_dim"
+        },
+        {
+          "name": "batch_dim"
+        }
+      ]
+    }
+  },
+  {
+    "name": "PadV2",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "paddings",
+          "dynamic": false
+        },
+        {
+          "name": "constant_values",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "DepthToSpace",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "block_size"
+        },
+        {
+          "name": "data_format"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ExtractImagePatches",
+    "schema": {
+      "inputs": [
+        {
+          "name": "images",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "ksizes"
+        },
+        {
+          "name": "strides"
+        },
+        {
+          "name": "rates"
+        },
+        {
+          "name": "padding"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Shape",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Squeeze",
+    "schema": {
+      "category": "Shape",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ScatterNd",
+    "schema": {
+      "inputs": [
+        {
+          "name": "indices",
+          "dynamic": false
+        },
+        {
+          "name": "updates",
+          "dynamic": false
+        },
+        {
+          "name": "shape",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "BatchReindex",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "reindex",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Copy",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "FakeQuantWithMinMaxVarsPerChannel",
+    "schema": {
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": false
+        },
+        {
+          "name": "min",
+          "dynamic": false
+        },
+        {
+          "name": "max",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_bits"
+        },
+        {
+          "name": "narrow_range"
+        }
+      ]
+    }
+  },
+  {
+    "name": "OneHot",
+    "schema": {
+      "inputs": [
+        {
+          "name": "indices",
+          "dynamic": false
+        },
+        {
+          "name": "depth",
+          "dynamic": false
+        },
+        {
+          "name": "on_value",
+          "dynamic": false
+        },
+        {
+          "name": "off_value",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    }
+  },
+  {
+    "name": "StopGradient",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Crop",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "size",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "offsets"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Reverse",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Permute",
+    "schema": {
+      "category": "Shape",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "input_format",
+          "type": "Format"
+        },
+        {
+          "name": "output_format",
+          "type": "Format"
+        },
+        {
+          "name": "order"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Transpose",
+    "schema": {
+      "category": "Shape",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "order"
+        }
+      ]
+    }
+  },
+  {
+    "name": "DetectionPostprocessing",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        },
+        {
+          "name": "x3",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y1",
+          "dynamic": false
+        },
+        {
+          "name": "y2",
+          "dynamic": false
+        },
+        {
+          "name": "y3",
+          "dynamic": false
+        },
+        {
+          "name": "y4",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale_y"
+        },
+        {
+          "name": "scale_x"
+        },
+        {
+          "name": "scale_h"
+        },
+        {
+          "name": "scale_w"
+        },
+        {
+          "name": "max_num_detections"
+        },
+        {
+          "name": "score_threshold"
+        },
+        {
+          "name": "iou_threshold"
+        },
+        {
+          "name": "use_regular_nms"
+        },
+        {
+          "name": "max_classes_per_detection"
+        },
+        {
+          "name": "max_detections_per_class"
+        },
+        {
+          "name": "is_bg_in_label"
+        }
+      ]
+    }
+  },
+  {
+    "name": "MsrGenerateRpnProposals",
+    "schema": {
+      "inputs": [
+        {
+          "name": "scores",
+          "dynamic": false
+        },
+        {
+          "name": "boxes",
+          "dynamic": false
+        },
+        {
+          "name": "img_shape",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "proposal_scores",
+          "dynamic": false
+        },
+        {
+          "name": "proposal_boxes",
+          "dynamic": false
+        },
+        {
+          "name": "proposal_num",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "pre_nms_topk"
+        },
+        {
+          "name": "post_nms_topk"
+        },
+        {
+          "name": "rpn_mini_size"
+        },
+        {
+          "name": "rpn_proposal_nms_thresh"
+        }
+      ]
+    }
+  },
+  {
+    "name": "FSRDetectionOutput",
+    "schema": {
+      "inputs": [
+        {
+          "name": "score",
+          "dynamic": false
+        },
+        {
+          "name": "bbox_pred",
+          "dynamic": false
+        },
+        {
+          "name": "rois",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out_box_num",
+          "dynamic": false
+        },
+        {
+          "name": "box",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_classes"
+        },
+        {
+          "name": "nms_threshold"
+        },
+        {
+          "name": "confidence_threshold"
+        },
+        {
+          "name": "img_h"
+        },
+        {
+          "name": "img_w"
+        },
+        {
+          "name": "batch_size"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Add",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Mul",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "z",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Expm1",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Ceil",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Sin",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Cos",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Floor",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Log1p",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "LogicalAnd",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "LogicalNot",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Maximum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Minimum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Acosh",
+    "schema": {
+      "category": "Activation",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Asinh",
+    "schema": {
+      "category": "Activation",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "PReLU",
+    "schema": {
+      "category": "Activation",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "param",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Equal",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Reciprocal",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Sqrt",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Square",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ReduceAll",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axes"
+        },
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Cast",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "SrcT",
+          "type": "DataTypeInner"
+        },
+        {
+          "name": "DstT",
+          "type": "DataTypeInner"
+        }
+      ]
+    }
+  },
+  {
+    "name": "CastT",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "src_dtype",
+          "type": "DataTypeInner"
+        },
+        {
+          "name": "dst_dtype",
+          "type": "DataTypeInner"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sign",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Cosh",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Exp",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "FloorMod",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "GreaterEqual",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Less",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "MatMul",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "transpose_x1"
+        },
+        {
+          "name": "transpose_x2"
+        }
+      ]
+    }
+  },
+  {
+    "name": "RealDiv",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Rint",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Round",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Rsqrt",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Sinh",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Sub",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Range",
+    "schema": {
+      "inputs": [
+        {
+          "name": "start",
+          "dynamic": false
+        },
+        {
+          "name": "limit",
+          "dynamic": false
+        },
+        {
+          "name": "delta",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Acos",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Asin",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Atanh",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Log",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "LogicalOr",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Neg",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ReduceProd",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "keep_dims"
+        },
+        {
+          "name": "axes"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ReduceSum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ReduceMean",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axes",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tan",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ArgMax",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "output_type"
+        },
+        {
+          "name": "keep_dims"
+        },
+        {
+          "name": "outmaxval"
+        },
+        {
+          "name": "topk"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ArgMaxExt2",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "output_type"
+        },
+        {
+          "name": "keep_dims"
+        },
+        {
+          "name": "outmaxval"
+        },
+        {
+          "name": "topk"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ArgMin",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "NotEqual",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "LessEqual",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "FloorDiv",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "UnsortedSegmentSum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        },
+        {
+          "name": "num_segments",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Cumsum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "exclusive"
+        },
+        {
+          "name": "reverse"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Cumprod",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axis",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "exclusive"
+        },
+        {
+          "name": "reverse"
+        }
+      ]
+    }
+  },
+  {
+    "name": "TruncateMod",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ReduceMin",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "LayerNorm",
+    "schema": {
+      "category": "Normalization",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "scale",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "reduction_indices"
+        },
+        {
+          "name": "epsilon"
+        }
+      ]
+    }
+  },
+  {
+    "name": "InstanceNorm",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "scale",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "reduction_indices"
+        },
+        {
+          "name": "epsilon"
+        }
+      ]
+    }
+  },
+  {
+    "name": "L2Normalize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "eps"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Pow",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Power",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale"
+        },
+        {
+          "name": "shift"
+        },
+        {
+          "name": "power"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ChannelAxpy",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        },
+        {
+          "name": "x3",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Clip",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "clip_value_min",
+          "dynamic": false
+        },
+        {
+          "name": "clip_value_max",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ReduceMax",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SquaredDifference",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Atan",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ReduceAny",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "axes",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "keep_dims"
+        }
+      ]
+    }
+  },
+  {
+    "name": "LogicalXor",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "SegmentMax",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "SegmentMin",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "SegmentMean",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "SegmentSum",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "SegmentProd",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "segment_ids",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "BatchMatMul",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "z",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "adj_x"
+        },
+        {
+          "name": "adj_y"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Select",
+    "schema": {
+      "inputs": [
+        {
+          "name": "condition",
+          "dynamic": false
+        },
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Activation",
+    "schema": {
+      "category": "Activation",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode",
+          "type": "Enum",
+          "enum": [
+            "Sigmoid",
+            "ReLU",
+            "Tanh",
+            "Clipped ReLU",
+            "ELU",
+            "PReLU",
+            "Abs",
+            "ReLU1",
+            "Softsign",
+            "Softplus",
+            "Hard Sigmoid",
+            "Threshold ReLU",
+            "SELU",
+            "Linear",
+            "ReLU6",
+            "GELU"
+          ]
+        },
+        {
+          "name": "coef"
+        },
+        {
+          "name": "negative_slope"
+        }
+      ]
+    }
+  },
+  {
+    "name": "BatchNorm",
+    "schema": {
+      "category": "Normalization",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "scale",
+          "dynamic": false
+        },
+        {
+          "name": "b",
+          "dynamic": false
+        },
+        {
+          "name": "mean",
+          "dynamic": false
+        },
+        {
+          "name": "variance",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "momentum"
+        },
+        {
+          "name": "epsilon"
+        },
+        {
+          "name": "mode"
+        },
+        {
+          "name": "use_global_stats"
+        }
+      ]
+    }
+  },
+  {
+    "name": "BatchNormExt2",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "scale",
+          "dynamic": false
+        },
+        {
+          "name": "offset",
+          "dynamic": false
+        },
+        {
+          "name": "mean",
+          "dynamic": false
+        },
+        {
+          "name": "variance",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "momentum"
+        },
+        {
+          "name": "epsilon"
+        },
+        {
+          "name": "mode"
+        },
+        {
+          "name": "use_global_stats"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Convolution",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        },
+        {
+          "name": "b",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "algo",
+          "type": "Enum",
+          "enum": [
+            "GEMM",
+            "Winograd",
+            "GEMM_ACCU_Float32"
+          ]
+        },
+        {
+          "name": "mode",
+          "type": "Enum",
+          "enum": [
+            "Convolution",
+            "Cross Correlation",
+            "Deconvolution",
+            "Depthwise"
+          ]
+        },
+        {
+          "name": "group"
+        },
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "kernel"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Conv2D",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        },
+        {
+          "name": "b",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "algo",
+          "type": "Enum",
+          "enum": [
+            "GEMM",
+            "Winograd",
+            "GEMM_ACCU_Float32"
+          ]
+        },
+        {
+          "name": "mode",
+          "type": "Enum",
+          "enum": [
+            "Convolution",
+            "Cross Correlation",
+            "Deconvolution",
+            "Depthwise"
+          ]
+        },
+        {
+          "name": "group"
+        },
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "kernel"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        }
+      ]
+    }
+  },
+  {
+    "name": "QuantizedConvolution",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "group"
+        },
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "kernel"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "x_quant_type"
+        },
+        {
+          "name": "filter_quant_type"
+        },
+        {
+          "name": "x_quant_scale"
+        },
+        {
+          "name": "x_quant_offset"
+        },
+        {
+          "name": "filter_quant_scales"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Deconvolution",
+    "schema": {
+      "inputs": [
+        {
+          "name": "input_sizes",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "group"
+        },
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "bias_term"
+        },
+        {
+          "name": "kernel"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ConvTranspose",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "output_shape",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        },
+        {
+          "name": "offset_w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "group"
+        },
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "bias_term"
+        },
+        {
+          "name": "kernel"
+        }
+      ]
+    }
+  },
+  {
+    "name": "BiasAdd",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Eltwise",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode",
+          "type": "Enum",
+          "enum": [
+            "Product",
+            "Sum",
+            "Max"
+          ]
+        },
+        {
+          "name": "coeff"
+        },
+        {
+          "name": "weight"
+        }
+      ]
+    }
+  },
+  {
+    "name": "LRN",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "lrn_localsize"
+        },
+        {
+          "name": "lrn_alpha"
+        },
+        {
+          "name": "lrn_beta"
+        },
+        {
+          "name": "lrn_k"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ConvolutionDepthwise",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "group"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "mode"
+        },
+        {
+          "name": "algo"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "kernel"
+        }
+      ]
+    }
+  },
+  {
+    "name": "QuantizedConvolutionDepthwise",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "group"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "algo"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "dilation"
+        },
+        {
+          "name": "kernel"
+        },
+        {
+          "name": "x_quant_type"
+        },
+        {
+          "name": "filter_quant_type"
+        },
+        {
+          "name": "x_quant_scale"
+        },
+        {
+          "name": "x_quant_offset"
+        },
+        {
+          "name": "filter_quant_scales"
+        }
+      ]
+    }
+  },
+  {
+    "name": "FullConnection",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        },
+        {
+          "name": "b",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_output"
+        }
+      ]
+    }
+  },
+  {
+    "name": "FullyConnection",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "w",
+          "dynamic": false
+        },
+        {
+          "name": "b",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_output"
+        }
+      ]
+    }
+  },
+  {
+    "name": "QuantizedFullConnection",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "num_output"
+        },
+        {
+          "name": "x_quant_type"
+        },
+        {
+          "name": "filter_quant_type"
+        },
+        {
+          "name": "x_quant_scale"
+        },
+        {
+          "name": "x_quant_offset"
+        },
+        {
+          "name": "filter_quant_scales"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Pooling",
+    "schema": {
+      "category": "Pool",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "global_pooling"
+        },
+        {
+          "name": "window"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "ceil_mode"
+        },
+        {
+          "name": "data_mode"
+        }
+      ]
+    }
+  },
+  {
+    "name": "PoolingD",
+    "schema": {
+      "category": "Pool",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode"
+        },
+        {
+          "name": "pad_mode",
+          "type": "Padding"
+        },
+        {
+          "name": "global_pooling"
+        },
+        {
+          "name": "window"
+        },
+        {
+          "name": "pad"
+        },
+        {
+          "name": "stride"
+        },
+        {
+          "name": "ceil_mode"
+        },
+        {
+          "name": "data_mode"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scale",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "filter",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "bias_term"
+        },
+        {
+          "name": "has_bias_value"
+        },
+        {
+          "name": "filler_type"
+        },
+        {
+          "name": "filler_value"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ShuffleChannel",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "group"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Softmax",
+    "schema": {
+      "category": "Activation",
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "algo"
+        }
+      ]
+    }
+  },
+  {
+    "name": "TopK",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "k",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y1",
+          "dynamic": false
+        },
+        {
+          "name": "y2",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "sorted"
+        }
+      ]
+    }
+  },
+  {
+    "name": "LogSoftmax",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "algo"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ChannelShuffle",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        },
+        {
+          "name": "num_group"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Upsample",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale_h"
+        },
+        {
+          "name": "scale_w"
+        },
+        {
+          "name": "scale"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ROIPooling",
+    "schema": {
+      "category": "Pool",
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "pooled_h"
+        },
+        {
+          "name": "pooled_w"
+        },
+        {
+          "name": "spatial_scale"
+        },
+        {
+          "name": "spatial_scale_h"
+        },
+        {
+          "name": "spatial_scale_w"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Clipboxes",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "im_info",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Normalize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "across_spatial"
+        },
+        {
+          "name": "channel_shared"
+        },
+        {
+          "name": "eps"
+        }
+      ]
+    }
+  },
+  {
+    "name": "PriorBox",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "im_info",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "min_size"
+        },
+        {
+          "name": "max_size"
+        },
+        {
+          "name": "min_size_num"
+        },
+        {
+          "name": "max_size_num"
+        },
+        {
+          "name": "aspect_ratio"
+        },
+        {
+          "name": "aspect_ratio_num"
+        },
+        {
+          "name": "img_h"
+        },
+        {
+          "name": "img_w"
+        },
+        {
+          "name": "flip"
+        },
+        {
+          "name": "clip"
+        },
+        {
+          "name": "step_h"
+        },
+        {
+          "name": "step_w"
+        },
+        {
+          "name": "offset"
+        },
+        {
+          "name": "variance"
+        },
+        {
+          "name": "variance_num"
+        }
+      ]
+    }
+  },
+  {
+    "name": "DecodeBBox",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "decode_clip"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Proposal",
+    "schema": {
+      "inputs": [
+        {
+          "name": "cls_prob",
+          "dynamic": false
+        },
+        {
+          "name": "bbox_pred",
+          "dynamic": false
+        },
+        {
+          "name": "im_info",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "rois",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "feat_stride"
+        },
+        {
+          "name": "base_size"
+        },
+        {
+          "name": "min_size"
+        },
+        {
+          "name": "ratio"
+        },
+        {
+          "name": "scale"
+        },
+        {
+          "name": "pre_nms_topn"
+        },
+        {
+          "name": "post_nms_topn"
+        },
+        {
+          "name": "nms_thresh"
+        }
+      ]
+    }
+  },
+  {
+    "name": "PSROIPooling",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "rois",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "spatial_scale"
+        },
+        {
+          "name": "output_dim"
+        },
+        {
+          "name": "group_size"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SVDF",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        },
+        {
+          "name": "x3",
+          "dynamic": false
+        },
+        {
+          "name": "x4",
+          "dynamic": false
+        },
+        {
+          "name": "x5",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y1",
+          "dynamic": false
+        },
+        {
+          "name": "y2",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "rank"
+        },
+        {
+          "name": "use_bias"
+        }
+      ]
+    }
+  },
+  {
+    "name": "FractionalPooling",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        },
+        {
+          "name": "row_pooling_sequence",
+          "dynamic": false
+        },
+        {
+          "name": "col_pooling_sequence",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mode"
+        },
+        {
+          "name": "pooling_ratio"
+        },
+        {
+          "name": "pseudo_random"
+        },
+        {
+          "name": "overlapping"
+        },
+        {
+          "name": "deterministic"
+        },
+        {
+          "name": "seed"
+        },
+        {
+          "name": "seed2"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SPP",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "pyramidHeight"
+        },
+        {
+          "name": "poolingMode"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Threshold",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "threshold"
+        }
+      ]
+    }
+  },
+  {
+    "name": "MVN",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "normalizeVariance"
+        },
+        {
+          "name": "acrossChannel"
+        }
+      ]
+    }
+  },
+  {
+    "name": "BNLL",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Swish",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "scale"
+        }
+      ]
+    }
+  },
+  {
+    "name": "LSTM",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "cont",
+          "dynamic": false
+        },
+        {
+          "name": "xstatic",
+          "dynamic": false
+        },
+        {
+          "name": "w_x",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        },
+        {
+          "name": "w_h",
+          "dynamic": false
+        },
+        {
+          "name": "w_xstatic",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "hidden_size"
+        },
+        {
+          "name": "forget_bias"
+        },
+        {
+          "name": "num_layers"
+        },
+        {
+          "name": "activation"
+        },
+        {
+          "name": "time_major"
+        },
+        {
+          "name": "support_cont"
+        },
+        {
+          "name": "support_xstatic"
+        },
+        {
+          "name": "num_output"
+        }
+      ]
+    }
+  },
+  {
+    "name": "BidirectionLSTM",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "seq_len",
+          "dynamic": false
+        },
+        {
+          "name": "w_forward",
+          "dynamic": false
+        },
+        {
+          "name": "w_backward",
+          "dynamic": false
+        },
+        {
+          "name": "initial_cell_forward",
+          "dynamic": false
+        },
+        {
+          "name": "initial_hidden_forward",
+          "dynamic": false
+        },
+        {
+          "name": "initial_cell_backward",
+          "dynamic": false
+        },
+        {
+          "name": "initial_hidden_backward",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y1",
+          "dynamic": false
+        },
+        {
+          "name": "y2",
+          "dynamic": false
+        },
+        {
+          "name": "y3",
+          "dynamic": false
+        },
+        {
+          "name": "y4",
+          "dynamic": false
+        },
+        {
+          "name": "y5",
+          "dynamic": false
+        },
+        {
+          "name": "y6",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "hidden_size"
+        },
+        {
+          "name": "forget_bias"
+        },
+        {
+          "name": "num_layers"
+        },
+        {
+          "name": "activation"
+        },
+        {
+          "name": "time_major"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bias",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "bias",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "axis"
+        }
+      ]
+    }
+  },
+  {
+    "name": "AxisAlignedBboxTransform",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        },
+        {
+          "name": "x3",
+          "dynamic": false
+        },
+        {
+          "name": "x4",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "RandomUniform",
+    "schema": {
+      "inputs": [
+        {
+          "name": "shape",
+          "dynamic": false
+        },
+        {
+          "name": "minval",
+          "dynamic": false
+        },
+        {
+          "name": "maxval",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "RandomUniformInt",
+    "schema": {
+      "inputs": [
+        {
+          "name": "shape",
+          "dynamic": false
+        },
+        {
+          "name": "minval",
+          "dynamic": false
+        },
+        {
+          "name": "maxval",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "RandomNormal",
+    "schema": {
+      "inputs": [
+        {
+          "name": "shape",
+          "dynamic": false
+        },
+        {
+          "name": "mean",
+          "dynamic": false
+        },
+        {
+          "name": "stddev",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Multinomial",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "num_samples",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "seed"
+        },
+        {
+          "name": "seed2"
+        }
+      ]
+    }
+  },
+  {
+    "name": "RandomShuffle",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "ImageData",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "input_format"
+        },
+        {
+          "name": "src_image_size_w"
+        },
+        {
+          "name": "src_image_size_h"
+        },
+        {
+          "name": "image_type"
+        }
+      ]
+    }
+  },
+  {
+    "name": "DynamicImageData",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "max_src_image_size"
+        },
+        {
+          "name": "image_type"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImageCrop",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "load_start_pos_h"
+        },
+        {
+          "name": "load_start_pos_w"
+        },
+        {
+          "name": "crop_size_h"
+        },
+        {
+          "name": "crop_size_w"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImageChannelSwap",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "rbuv_swap_switch"
+        },
+        {
+          "name": "ax_swap_switch"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImageColorSpaceConvertion",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "target_format"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImageResize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "resize_output_h"
+        },
+        {
+          "name": "resize_output_w"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImageDataTypeConversion",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mean_chn_0"
+        },
+        {
+          "name": "mean_chn_1"
+        },
+        {
+          "name": "mean_chn_2"
+        },
+        {
+          "name": "mean_chn_3"
+        },
+        {
+          "name": "min_chn_0"
+        },
+        {
+          "name": "min_chn_1"
+        },
+        {
+          "name": "min_chn_2"
+        },
+        {
+          "name": "min_chn_3"
+        },
+        {
+          "name": "var_reci_chn_0"
+        },
+        {
+          "name": "var_reci_chn_1"
+        },
+        {
+          "name": "var_reci_chn_2"
+        },
+        {
+          "name": "var_reci_chn_3"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ImagePadding",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "left_padding_size"
+        },
+        {
+          "name": "right_padding_size"
+        },
+        {
+          "name": "top_padding_size"
+        },
+        {
+          "name": "bottom_padding_size"
+        }
+      ]
+    }
+  },
+  {
+    "name": "CropAndResize",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "boxes",
+          "dynamic": false
+        },
+        {
+          "name": "box_index",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "method"
+        },
+        {
+          "name": "extrapolation_value"
+        },
+        {
+          "name": "crop_size_h"
+        },
+        {
+          "name": "crop_size_w"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ResizeBilinear",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        },
+        {
+          "name": "size",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "align_corners"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ResizeNearestNeighbor",
+    "schema": {
+      "inputs": [
+        {
+          "name": "image",
+          "dynamic": false
+        },
+        {
+          "name": "size",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "align_corners"
+        }
+      ]
+    }
+  },
+  {
+    "name": "HeatmapMaxKeypoint",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x1",
+          "dynamic": false
+        },
+        {
+          "name": "x2",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y1",
+          "dynamic": false
+        },
+        {
+          "name": "y2",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "NonMaxSuppression",
+    "schema": {
+      "inputs": [
+        {
+          "name": "boxes",
+          "dynamic": false
+        },
+        {
+          "name": "scores",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "max_output_size"
+        },
+        {
+          "name": "iou_threshold"
+        },
+        {
+          "name": "score_threshold"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Interp",
+    "schema": {
+      "inputs": [
+        {
+          "name": "x",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "y",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "height"
+        },
+        {
+          "name": "width"
+        },
+        {
+          "name": "shrink_factor"
+        },
+        {
+          "name": "zoom_factor"
+        },
+        {
+          "name": "pad_begin"
+        },
+        {
+          "name": "pad_end"
+        },
+        {
+          "name": "output_dim_mode"
+        }
+      ]
+    }
+  },
+  {
+    "name": "TransData",
+    "schema": {
+      "category": "Shape",
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "input_format",
+          "type": "Format"
+        },
+        {
+          "name": "output_format",
+          "type": "Format"
+        }
+      ]
+    }
+  },
+  {
+    "name": "GraphOp",
+    "schema": {
+      "category": "Layer",
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": true
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "TensorArray",
+    "schema": {
+      "inputs": [
+        {
+          "name": "data",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "handle",
+          "dynamic": false
+        },
+        {
+          "name": "flow",
+          "dynamic": false
+        },
+        {
+          "name": "memory",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "TensorArrayGather",
+    "schema": {
+      "inputs": [
+        {
+          "name": "handle",
+          "dynamic": false
+        },
+        {
+          "name": "indices",
+          "dynamic": false
+        },
+        {
+          "name": "flow_in",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "TensorArrayScatter",
+    "schema": {
+      "inputs": [
+        {
+          "name": "handle",
+          "dynamic": false
+        },
+        {
+          "name": "indices",
+          "dynamic": false
+        },
+        {
+          "name": "value",
+          "dynamic": false
+        },
+        {
+          "name": "flow_in",
+          "dynamic": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow",
+          "dynamic": false
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "NetOutput",
+    "schema": {
+      "category": "Data",
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": true
+        }
+      ],
+      "attributes": []
+    }
+  },
+  {
+    "name": "Undefined",
+    "schema": {
+      "inputs": [
+        {
+          "name": "input",
+          "dynamic": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "dynamic": true
+        }
+      ],
+      "attributes": []
+    }
+  }
+]

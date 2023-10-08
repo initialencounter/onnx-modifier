@@ -1,0 +1,33 @@
+{
+  "name": "onnx-modifier",
+  "version": "1.0.0",
+  "description": "<img src=\"./docs/onnx_modifier_logo.png\" style=\"zoom: 60%;\" />",
+  "main": "electron/electron.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ascend/ait.git"
+  },
+  "author": "Ascend",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@antv/layout": "^0.3.20",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "electron": "^24.1.3"
+  }
+}

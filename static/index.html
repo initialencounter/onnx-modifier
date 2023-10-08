@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="version" content="0.0.0">
+<title>onnx-modifier</title>
+<link rel="stylesheet" type="text/css" href="view-main-page.css">
+<link rel="stylesheet" type="text/css" href="view-grapher.css">
+<link rel="stylesheet" type="text/css" href="view-sidebar.css">
+<link rel="stylesheet" type="text/css" href="view-toolbar.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+<script src="dagre.js"></script>
+<script src="base.js"></script>
+<script src="text.js"></script>
+<script src="json.js"></script>
+<script src="xml.js"></script>
+<script src="python.js"></script>
+<script src="protobuf.js"></script>
+<script src="flatbuffers.js"></script>
+<script src="zip.js"></script>
+<script src="gzip.js"></script>
+<script src="tar.js"></script>
+<script src="view-grapher.js"></script>
+<script src="view-sidebar.js"></script>
+<script src="view.js"></script>
+<script src="index.js"></script>
+<script src="modifier.js"></script>
+
+</head>
+<body class="welcome">
+<div class="main-page">
+<div class="content">
+<div class="toolbar-left">
+    <div id="menu-button" class="icon toolbar-button">
+        <div class="title"> Menu </div>
+        <img src="svg/menu.svg"/>
+    </div>
+
+    <div id="open-file-button" class="icon toolbar-button">
+        <div class="title"> Open Model File </div>
+        <img src="svg/open.svg"/>
+    </div>
+
+    <div id="download-graph" class="icon toolbar-button">
+        <div class="title"> Download </div>
+        <img src="svg/save.svg"/>
+    </div>
+
+
+    <div id="reset-graph" class="icon toolbar-button" title="Roll back all modifications to the original model">
+        <div class="title"> Reset </div>
+        <img src="svg/reset.svg"/>
+    </div>
+
+    <div id="extract-graph" class="icon toolbar-button" title="Subnet export. start and end nodes need to be selected">
+        <div class="title"> Extract Sub Network </div>
+        <img src="svg/extract to.svg"/>
+    </div>
+
+    <img src="svg/分割线.svg" style="margin: 0 20px ;"/>
+
+    <div id="add-node" class="icon toolbar-button">
+        <div class="title"> Add Node </div>
+        <img src="svg/add node.svg"/>
+    </div>
+
+    <img src="svg/分割线.svg" style="margin: 0 20px ;"/>
+
+    <div id="onnxsim-graph" class="icon toolbar-button" title="Invoke onnxsim to optimize the entire network">
+        <div class="title"> OnnxSim </div>
+        <img src="svg/onnx_sim.svg"/>
+    </div>
+
+
+    <div id="auto-optimizer-graph" class="icon toolbar-button" title="Invoke AutoOptimizer(surgeon) to optimize the entire network. It is an optimization tool based on the knowledge base. For details, see the AIT description document">
+        <div class="title"> AutoOptimizer </div>
+        <img src="svg/auto_optimizer.svg"/>
+    </div>
+
+    <img src="svg/分割线.svg" style="margin: 0 20px ;"/>
+
+    <div id="modify-export" class="icon toolbar-button" title="Export the current modification to a JSON file. You can import and apply these changes later">
+        <div class="title"> Modifier Info Export </div>
+        <img src="svg/modify-import.svg"/>
+    </div>
+
+
+    <div id="modify-import" class="icon toolbar-button" title="Import the JSON file and apply the saved modification steps">
+        <div class="title"> Modifier Info Import </div>
+        <img src="svg/modify-export.svg"/>
+    </div>
+</div>
+<div id="graph" class="graph" tabindex="0">
+    <svg id="canvas" class="canvas" preserveaspectratio="xMidYMid meet" width="100%" height="100%">
+        <g id="linecolor">
+            <linearGradient id="gradient-start">
+                <stop stop-color="#0077FF"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-end">
+                <stop stop-color="#2cf347"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-start-end">
+                <stop stop-color="#0077FF"></stop>
+                <stop stop-color="#0077FF" offset="0.5"></stop>
+                <stop stop-color="#2cf347" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-node">
+                <stop stop-color="#2cf347"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-clicked">
+                <stop stop-color="#c78c3e"></stop>
+            </linearGradient>
+
+            <linearGradient id="gradient-start-black">
+                <stop stop-color="#0077FF"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-end-black">
+                <stop stop-color="#24AB36"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-start-end-black">
+                <stop stop-color="#0077FF"></stop>
+                <stop stop-color="#0077FF" offset="0.5"></stop>
+                <stop stop-color="#24AB36" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-node-black">
+                <stop stop-color="#24AB36"></stop>
+            </linearGradient>
+            <linearGradient id="gradient-clicked-black">
+                <stop stop-color="white"></stop>
+            </linearGradient>
+        </g>
+    </svg>
+</div>
+<div id="dragable"> </div>
+<div id="sidebar" class="sidebar"></div>
+<div id="toolbar" class="toolbar">
+    <button id="zoom-in-button" class="toolbar-button" title="Zoom In">
+        <svg class="icon" viewbox="0 0 100 100">
+            <circle class="border" cx="50" cy="50" r="35" stroke-width="8" stroke="#fff"></circle>
+            <line class="border" x1="50" y1="38" x2="50" y2="62" stroke-width="8" stroke-linecap="round" stroke="#fff"></line>
+            <line class="border" x1="38" y1="50" x2="62" y2="50" stroke-width="8" stroke-linecap="round" stroke="#fff"></line>
+            <line class="border" x1="78" y1="78" x2="82" y2="82" stroke-width="12" stroke-linecap="square" stroke="#fff"></line>
+            <circle class="stroke" cx="50" cy="50" r="35" stroke-width="4"></circle>
+            <line class="stroke" x1="50" y1="38" x2="50" y2="62" stroke-width="4" stroke-linecap="round"></line>
+            <line class="stroke" x1="38" y1="50" x2="62" y2="50" stroke-width="4" stroke-linecap="round"></line>
+            <line class="stroke" x1="78" y1="78" x2="82" y2="82" stroke-width="8" stroke-linecap="square"></line>
+        </svg>
+    </button>
+
+    <button id="zoom-out-button" class="toolbar-button" title="Zoom Out">
+        <svg class="icon" viewbox="0 0 100 100">
+            <circle class="border" cx="50" cy="50" r="35" stroke-width="8" stroke="#fff"></circle>
+            <line class="border" x1="38" y1="50" x2="62" y2="50" stroke-width="8" stroke-linecap="round" stroke="#fff"></line>
+            <line class="border" x1="78" y1="78" x2="82" y2="82" stroke-width="12" stroke-linecap="square" stroke="#fff"></line>
+            <circle class="stroke" cx="50" cy="50" r="35" stroke-width="4"></circle>
+            <line class="stroke" x1="38" y1="50" x2="62" y2="50" stroke-width="4" stroke-linecap="round"></line>
+            <line class="stroke" x1="78" y1="78" x2="82" y2="82" stroke-width="8" stroke-linecap="square"></line>
+        </svg>
+    </button>
+    <button id="back-button" class="toolbar-back-button" title="Back">
+        &#x276E;
+    </button>
+    <button id="name-button" class="toolbar-name-button" title="Name">
+    </button>
+    <button id="sub-graph-name-button" class="toolbar-name-button" title="Sub" style="display: none;">
+        showing <b> 100 </b> nodes around node named "<span> input </span> "
+    </button>
+    <div id="menu-dropdown" class="dropdown"></div>
+    <div id="menu-extract-dropdown" class="dropdown"></div>
+</div>
+</div>
+</div>
+<div class="center logo">
+    <a href="https://gitee.com/ascend/ait" target="blank_">
+        <svg class="" viewbox="0 0 5120 300">
+           <g style="font-size:240pt" >
+               <text class="logo-fill" x=200 y=260 textLength="2560">Ascend's</text>
+           </g>
+       </svg>
+   </a>
+    <a href="https://gitee.com/ascend/ait/tree/master/onnx-modifier" target="blank_">
+        <img src="./svg/logo.svg"
+             title="onnx-modifier is a tool to modify onnx models in a visualization fashion. It is built based on Netron and flask."
+             height="130">
+    </a>
+
+    <button id="open-file-button-logo" class="center open-file-button">Open Model&hellip;</button>
+    <button id="github-button" class="center github-button">Gitee repo</button>
+    <input type="file" id="open-file-dialog" class="open-file-dialog" multiple="false" accept=".onnx, .om, .ort, .pb, .meta, .tflite, .lite, .tfl, .keras, .h5, .hd5, .hdf5, .json, .model, .mar, .params, .param, .armnn, .mnn, .ncnn, .tnnproto, .tmfile, .ms, .nn, .uff, .rknn, .xmodel, .kmodel, .paddle, .pdmodel, .pdparams, .nb, .dnn, .cmf, .mlmodel, .mlpackage, .caffemodel, .pbtxt, .prototxt, .pkl, .pt, .pth, .ptl, .t7, .joblib, .cfg, .xml, .zip, .tar">
+    <input type="file" id="open-modify-json-dialog" class="open-file-dialog" multiple="false" accept=".json">
+    <!-- Preload fonts to workaround Chrome SVG layout issue -->
+    <div style="font-weight: normal; color: rgba(0, 0, 0, 0.01); user-select: none;">.</div>
+    <div style="font-weight: bold; color: rgba(0, 0, 0, 0.01); user-select: none;">.</div>
+    <div style="font-weight: bold; color: rgba(0, 0, 0, 0.01); user-select: none;">.</div>
+</div>
+<div id="transparent" class="transparent"></div>
+<!-- dialogs -->
+<dialog id="show-message-alert" class="message-box dialog">
+    <h1> </h1>
+    <div class="text"> </div>
+    <div class="footer"><button onclick="document.getElementById('show-message-alert').close()">OK</button></div>
+</dialog>
+<dialog id="show-message-confirm" class="message-box confirm-message-box dialog">
+    <h1> </h1>
+    <div class="text"> </div>
+    <div class="footer">
+    </div>
+</dialog>
+<dialog id="show-message-info" open></dialog>
+<dialog id="show-about" class="dialog about message-box">
+    <a href="https://gitee.com/ascend/ait" target="blank_">
+        <svg class="logo-name" viewbox="0 0 5120 300">
+           <g style="font-size:240pt" >
+               <text class="logo-fill" x=200 y=260 textLength="2560">Ascend's</text>
+           </g>
+       </svg>
+   </a>
+    <a href="https://gitee.com/ascend/ait/tree/master/onnx-modifier" target="blank_">
+        <img src="./svg/logo.svg"
+             title="onnx-modifier is a tool to modify onnx models in a visualization fashion. It is built based on Netron and flask."
+             height="130px">
+    </a>
+
+    <div class="logo-message">
+        <div style="height: 30px; text-align: center;">Version <span id="version" class="select">{version}</span></div>
+        <div style="height: 30px; text-align: center;">Copyright &copy; <a href="https://gitee.com/ascend/ait/" target="blank_">Ascend</a></div>
+        <div style="height: 30px; text-align: center;">Thanks <a href="https://github.com/ZhangGe6" target="blank_">ZhangGe6</a></div>
+    </div>
+
+    <div class="footer"><button onclick="document.getElementById('show-about').close()">OK</button></div>
+</dialog>
+
+<dialog id="download-dialog" class="dialog message-box">
+    <input type="checkbox" id="shapeInference" class="download-checkbox-shapeInference"/>
+    <input type="text" value="shape inference" class="download-anno-shapeInference" readonly/> </td>
+    <input type="checkbox" id="cleanUp" class="download-checkbox-cleanUp"/>
+    <input type="text" value="clean up" class="download-anno-cleanUp" readonly/> </td>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button data-value="OK">OK</button>
+    </div>
+</dialog>
+<dialog id="addnode-dialog" class="dialog message-box">
+    <p class="title"> Add New Node </p>
+    <div class="dialog-content">
+        <div class="message"> Please choose node type </div>
+        <div class="content-item">
+            <p class="item-title"> Node: </p>
+            <div class="input">
+                <select id="add-node-dropdown" class="graph-op-add-node-dropdown">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+<dialog id="addinput-dialog" class="dialog message-box">
+    <p class="title"> Add New Input </p>
+    <div class="dialog-content">
+        <div class="message"> Please choose input </div>
+        <div class="content-item">
+            <p class="item-title"> input: </p>
+            <div class="input">
+                <select id="add-input-dropdown" class="graph-op-add-node-dropdown">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+<dialog id="change-input-shape-dialog" class="dialog message-box">
+    <p class="title"> Change Input Shape </p>
+    <div class="dialog-content">
+        <div class="message"> Please enter batchsize </div>
+        <div class="content-item">
+            <p class="item-title"> Shape: </p>
+            <div class="input">
+                <input id="change-input-shape-input" type="text" size="32" placeholder="example: batch,3,224,224"/>
+                <err_msg> </err_msg>
+            </div>
+        </div>
+        <div class="content-item">
+            <div class="input">
+                <input type="checkbox" class="checkbox-shape-change" checked />
+                <span class="download-anno-cleanUp"> shape inference  </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button id="change-input-shape-input-ok" data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+<dialog id="dynamic-batch-size-dialog" class="dialog message-box">
+    <p class="title"> Dynamic Input Batch Size </p>
+    <div class="dialog-content">
+        <div class="content-item">
+            <div class="input">
+                <input type="checkbox" class="checkbox-shape-change" checked />
+                <span class="download-anno-cleanUp"> shape inference  </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button id="dynamic-batch-size-input-ok" data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+<dialog id="fixed-batch-size-dialog" class="dialog message-box">
+    <p class="title"> Fixed Input Batch Size </p>
+    <div class="dialog-content">
+        <div class="message"> Please enter batchsize </div>
+        <div class="content-item">
+            <p class="item-title"> Batchsize: </p>
+            <div class="input">
+                <input id="fixed-batch-size-input" type="text" size="32"/>
+                <err_msg> </err_msg>
+            </div>
+        </div>
+        <div class="content-item">
+            <div class="input">
+                <input type="checkbox" class="checkbox-shape-change" checked />
+                <span class="download-anno-cleanUp"> shape inference  </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button id="fixed-batch-size-input-ok" data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+<dialog id="set-show-node-count" class="dialog message-box">
+    <p class="title"> Set The Number Of Nodes Displayed </p>
+    <div class="dialog-content">
+        <div class="message"> Please Enter The Number Of Nodes Displayed </div>
+        <div class="content-item">
+            <p class="item-title"> Number of Nodes Displayed: </p>
+            <div class="input">
+                <select id="input-show-node-count" class="graph-op-add-node-dropdown">
+                        <option value="100"> 100 </option>
+                        <option value="200"> 200 </option>
+                        <option value="300"> 300 </option>
+                        <option value="400"> 400 </option>
+                        <option value="50"> 50 </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button data-value="">Cancel</button>
+        <button data-value="Confirm">Confirm</button>
+    </div>
+</dialog>
+</body>
+</html>

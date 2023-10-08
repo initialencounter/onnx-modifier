@@ -93,12 +93,12 @@
     .select.edge-path { stroke: #b00; }
     #arrowhead-vee-select { fill: #b00 }
 
-    .node-item-function path { fill: #404040; }
+    .node-item-function path { fill: #242424; }
     .node-item-function text { fill: #dfdfdfdf; }
     .node-item-function:hover { cursor: pointer; }
     .node-item-function:hover path { fill: #666666; }
     
-    .node-item-type path { fill: #303030; }
+    .node-item-type path { fill: #684e4e; }
     .node-item-type text { fill: #dfdfdf; }
     .node-item-type:hover { cursor: pointer; }
     .node-item-type:hover path { fill: #808080; }
@@ -111,15 +111,15 @@
     .node-attribute path { fill: #2d2d2d; }
     .node-attribute:hover path { fill: #666666; }
 
-    .graph-item-input path { fill: #404040; }
+    .graph-item-input path { fill: #242424; }
     .graph-item-input:hover { cursor: pointer; }
     .graph-item-input:hover path { fill: #666666; }
 
-    .graph-item-output path { fill: #404040; }
+    .graph-item-output path { fill: #242424; }
     .graph-item-output:hover { cursor: pointer; }
     .graph-item-output:hover path { fill: #666666; }
 
-    .node-item-input path { fill: #404040; }
+    .node-item-input path { fill: #242424; }
     .node-item-input:hover path { fill: #666666; }
     .node-item-constant path { fill: #4b4b4b; }
     .node-item-constant:hover path { fill: #666666; }

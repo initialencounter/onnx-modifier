@@ -79,8 +79,8 @@ button { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI"
 .default .toolbar { display: table; }
 @media (prefers-color-scheme: dark) {
 :root { color-scheme: dark; }
-.default { background-color: #404040; }
-.graph { background-color: #404040;}
+.default { background-color: #242424; }
+.graph { background-color: #242424;}
 .welcome { background-color: #1e1e1e; color: #888888; }
 .welcome .logo-stroke { stroke: #888888; }
 .welcome .logo-fill { fill: #888888; }

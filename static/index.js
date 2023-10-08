@@ -351,7 +351,6 @@ host.BrowserHost = class {
                 // }
 
                 this.take_effect_modify("/download", this.build_download_data(true), false, (blob)=> {
-                    console.log("2131231",blob)
                     this.export(this.upload_filename, blob)
                     this.show_message("Success!", "Model has been successfuly modified", "success");
                 })

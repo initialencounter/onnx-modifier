@@ -120,14 +120,14 @@
 @media (prefers-color-scheme: dark) {
     .toolbar-back-button { background: #aaaaaa; border-color: #aaaaaa; color: #333333; }
     .toolbar-back-button:hover { background: #dfdfdf; border-color: #dfdfdf; }
-    .toolbar-name-button { background: #404040; border-color: #aaaaaa; color: #cccccc; }
+    .toolbar-name-button { background: #242424; border-color: #aaaaaa; color: #cccccc; }
     .toolbar-name-button:hover { color: #dfdfdf; }
 
     .toolbar-menu-item { background-color: #3d3d3d; }
     .toolbar-item {background-color: #3d3d3d;}
 
     .toolbar-left{
-        background-color: #1F2329;
+        background-color: #242424;
     }
     .toolbar-left .icon .title {
         background-color: #000000;
